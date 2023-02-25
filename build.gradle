@@ -1,0 +1,30 @@
+plugins{
+	id 'org.kordamp.gradle.markdown' version '2.2.0'
+} 
+
+markdownToHtml.hardwraps = true
+[hardwraps: true] 
+
+markdownToHtml.autoLinks = true
+[autolinks: true]
+
+markdownToHtml.abbreviations = true
+[abbreviations: true]
+
+markdownToHtml.definitionLists = true
+[definitionsLists: true]
+
+markdownToHtml.smartQuotes = true
+[smartQuotes: true]
+
+markdownToHtml.smartPunctuation = true
+[smartPunctuation: true]
+
+markdownToHtml.smart = true 
+[smart: true]
+
+markdownToHtml.fencedCodeBlocks = true
+[fencedCodeBlocks: true]
+
+markdownToHtml.tables = true
+[tables: true]
