@@ -1,0 +1,31 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.4'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'post.work.sesion4'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
+/* si comentamos lo de arriba se puede ejecutar con bootRun normalmente pero ¿es realmente correcto hacerlo así?
+si no es el caso sólo descomentarlo, dará error pero se puede ejecutar con shift+f10 en donde está el main
+y funcionará sin ningún problema, después de investigar llego a la conclusión que esto no es correcto
+Pues al final spring es un servicio de arquitectura y no una forma de interactuar por medio de datos
+introducidos por el usuario si no es por medio de una api o un rest.*/
+
+bootRun {
+	standardInput = System.in
+}
