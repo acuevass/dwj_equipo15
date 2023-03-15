@@ -17,9 +17,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-//tasks.named('test') {
-//	useJUnitPlatform()
-//}
+tasks.named('test') {
+	useJUnitPlatform()
+}
 /* si comentamos lo de arriba se puede ejecutar con bootRun normalmente pero ¿es realmente correcto hacerlo así?
 si no es el caso sólo descomentarlo, dará error pero se puede ejecutar con shift+f10 en donde está el main
 y funcionará sin ningún problema, después de investigar llego a la conclusión que esto no es correcto
