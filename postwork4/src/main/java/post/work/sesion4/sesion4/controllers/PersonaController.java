@@ -1,17 +1,38 @@
 package post.work.sesion4.sesion4.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import post.work.sesion4.sesion4.model.Persona;
+import post.work.sesion4.sesion4.service.AgendaService;
 
-import java.util.Scanner;
+import java.util.Set;
 
+@RestController
+@RequestMapping("/contactos")
 public class PersonaController {
-//    @GetMapping("/person")
-//    public Persona persona(){
-//        Scanner scanner = new Scanner(System.in);
-//        String nombre = scanner.nextLine();
-//        int edad = scanner.nextInt();
-//        Persona persona = new Persona(nombre,edad);
-//    }
-//    Estaba probando si se podía hacer esto y no, porque no importé la librería y porque spring no sirve para esto
-//    al final daría error
+
+    private AgendaService agendaService;
+
+    @Autowired
+    public PersonaController(AgendaService agendaService) {
+        this.agendaService = agendaService;
+    }
+
+    @GetMapping
+    public ResponseEntity<Set<Persona>> listarContactos(){
+        return ResponseEntity.ok(agendaService.listarPersonasService());
+    }
+
+    @PostMapping
+    public ResponseEntity<String> guardaPersona(@RequestBody Persona persona) {
+        String resultado = agendaService.guardarPersonaService(persona);
+
+        if (resultado == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(resultado + "\n" + persona);
+    }
+
 }
