@@ -21,7 +21,7 @@ public class AgendaService {
         this.agendaRepository = agendaRepository;
     }
 
-    public String guardarPersonaService(Persona persona) {
+    public Persona guardarPersonaService(Persona persona) {
         if (!validadorNumeroService.contieneCaracteresValidos(persona.getNumTelefono())) {
             return null;
         }

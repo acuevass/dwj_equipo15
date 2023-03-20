@@ -25,14 +25,14 @@ public class PersonaController {
     }
 
     @PostMapping
-    public ResponseEntity<String> guardaPersona(@RequestBody Persona persona) {
-        String resultado = agendaService.guardarPersonaService(persona);
+    public ResponseEntity<Persona> guardaPersona(@RequestBody Persona persona) {
+        Persona resultado = agendaService.guardarPersonaService(persona);
 
         if (resultado == null) {
             return ResponseEntity.badRequest().build();
         }
 
-        return ResponseEntity.ok(resultado + "\n" + persona);
+        return ResponseEntity.ok(persona);
     }
 
 }

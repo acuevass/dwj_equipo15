@@ -11,12 +11,14 @@ public class AgendaRepository {
 
     private Set<Persona> personas = new TreeSet<>();
 
-    public String  guardarPersona(Persona persona) {
+    public Persona  guardarPersona(Persona persona) {
         if (persona == null) {
-            return "Error al guardar contacto";
+//            return "Error al guardar contacto";
+        	System.out.println("Error al guardar contacto");
         }
-        personas.add(persona);
-        return "Persona guardada con exito!";
+      personas.add(persona);
+      System.out.println("Persona guardada con exito!");
+      return persona;
     }
 
     public Set<Persona> listarContactos() {
