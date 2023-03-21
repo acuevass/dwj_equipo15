@@ -5,25 +5,36 @@
     <style>
         .error {
             color: red;
+
         }
+        body {
+	        background-color: #92a8d1;
+	        border: groove white 8px;
+            width: 400px;
+	        block-size: 220px;
+
+	        background-image: url(../img/200w.gif);
+            background-repeat: no-repeat;
+            background-position-x: center;
+  }
     </style>
 </head>
 <body>
-<h1>- Equipo 15 -</h1>
+<h1>Proyecto Equipo 15</h1>
 <h2>Introduce un nuevo registro</h2>
 <form th:action="@{/registro}" th:object="${persona}" method="post">
     <div>
-        <label for="nombre">Nombre: </label>
+        <label x=30px for="nombre">Nombre: </label>
         <input id="nombre" type="text" th:field="*{nombre}">
         <div th:if="${#fields.hasErrors('nombre')}" th:errorclass="error" th:errors="*{nombre}"></div>
     </div>
     <div>
-        <label for="edad">Edad: </label>
+        <label for="edad">Edad:   </label>
         <input id="edad" type="text" th:field="*{edad}">
         <div th:if="${#fields.hasErrors('edad')}" th:errorclass="error" th:errors="*{edad}"></div>
     </div>
     <div>
-        <label for="numTelefono">Telefono: </label>
+        <label for="numTelefono">Teléfono: </label>
         <input id="numTelefono" type="text" th:field="*{numTelefono}">
         <div th:if="${#fields.hasErrors('numTelefono')}" th:errorclass="error" th:errors="*{numTelefono}"></div>
     </div>
