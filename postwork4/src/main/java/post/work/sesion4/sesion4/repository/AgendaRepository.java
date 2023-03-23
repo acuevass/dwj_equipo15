@@ -13,7 +13,6 @@ public class AgendaRepository {
 
     public Persona  guardarPersona(Persona persona) {
         if (persona == null) {
-//            return "Error al guardar contacto";
         	System.out.println("Error al guardar contacto");
         }
       personas.add(persona);

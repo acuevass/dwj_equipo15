@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import post.work.sesion4.sesion4.model.Persona;
 import post.work.sesion4.sesion4.service.AgendaService;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -20,7 +21,7 @@ public class PersonaController {
     }
 
     @GetMapping
-    public ResponseEntity<Set<Persona>> listarContactos(){
+    public ResponseEntity<List<Persona>> listarContactos(){
         return ResponseEntity.ok(agendaService.listarPersonasService());
     }
 
