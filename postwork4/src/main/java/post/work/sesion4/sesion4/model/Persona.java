@@ -1,8 +1,7 @@
 package post.work.sesion4.sesion4.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 
 import java.util.Objects;
 
@@ -13,18 +12,20 @@ public class Persona implements Comparable<Persona> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "El nombre de la persona es obligatorio.")
+    @NotBlank(message = "El nombre de la persona es obligatorio")
     @Column(nullable = false, length = 60)
     private String nombre;
-    private int edad;
+
+    @Pattern(regexp = "^(?:[1-9][0-9]?|1[0-9]|120)$", message = "Solo números validos")
+    @NotBlank(message = "El campo no puede ir vacio")
+    private String edad;
     @Pattern(regexp = "^(\\d{2,4}[- .]?){2}\\d{4}$", message = "El teléfono debe tener un formato de ##-####-####")
     @Column(nullable = false)
     private String numTelefono;
 
-    public Persona() {
-    }
+    public Persona() {}
 
-    public Persona(Long id, String nombre, int edad, String numTelefono) {
+    public Persona(Long id, String nombre, String edad, String numTelefono) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
@@ -47,11 +48,11 @@ public class Persona implements Comparable<Persona> {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 

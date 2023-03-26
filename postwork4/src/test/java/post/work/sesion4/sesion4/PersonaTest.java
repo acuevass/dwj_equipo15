@@ -16,9 +16,9 @@ public class PersonaTest {
 	@TestFactory
 	Stream<DynamicTest> testId(){
 		List<Persona> entradas = Arrays.asList(
-				new Persona(1L,"Juan",30,"4776476274"),
-				new Persona(2L,"María", 25, "55236547857"),
-		        new Persona(3L,"Carlos", 40, "6184786984") );
+				new Persona(1L,"Juan","30","4776476274"),
+				new Persona(2L,"María", "25", "55236547857"),
+		        new Persona(3L,"Carlos", "40", "6184786984") );
 
 		return entradas.stream()
 				.map(persona -> DynamicTest.dynamicTest(
@@ -29,9 +29,9 @@ public class PersonaTest {
 	@TestFactory
 	Stream<DynamicTest> testNombre(){
 		List<Persona> entradas = Arrays.asList(
-				new Persona(1L,"Juan",30,"4776476274"),
-				new Persona(2L,"María", 25, "55236547857"),
-		        new Persona(3L,"Carlos", 40, "6184786984") );
+				new Persona(1L,"Juan","30","4776476274"),
+				new Persona(2L,"María", "25", "55236547857"),
+		        new Persona(3L,"Carlos", "40", "6184786984") );
 
 		return entradas.stream()
 				.map(persona -> DynamicTest.dynamicTest(
@@ -42,9 +42,9 @@ public class PersonaTest {
 	@TestFactory
 	Stream<DynamicTest> testEdad(){
 		List<Persona> entradas = Arrays.asList(
-				new Persona(1L,"Juan",30,"4776476274"),
-				new Persona(2L,"María", 25, "55236547857"),
-		        new Persona(3L,"Carlos", 40, "6184786984") );
+				new Persona(1L,"Juan","30","4776476274"),
+				new Persona(2L,"María", "25", "55236547857"),
+		        new Persona(3L,"Carlos", "40", "6184786984") );
 
 		return entradas.stream()
 				.map(persona -> DynamicTest.dynamicTest(
@@ -55,9 +55,9 @@ public class PersonaTest {
 	@TestFactory
 	Stream<DynamicTest> testNumTelefono(){
 		List<Persona> entradas = Arrays.asList(
-				new Persona(1L,"Juan",30,"4776476274"),
-				new Persona(2L,"María", 25, "55236547857"),
-		        new Persona(3L,"Carlos", 40, "6184786984") );
+				new Persona(1L,"Juan","30","4776476274"),
+				new Persona(2L,"María", "25", "55236547857"),
+		        new Persona(3L,"Carlos", "40", "6184786984") );
 
 		return entradas.stream()
 				.map(persona -> DynamicTest.dynamicTest(

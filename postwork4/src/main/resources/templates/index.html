@@ -4,40 +4,84 @@
     <title>Registro</title>
     <style>
         .error {
+            margin: 20px 0;
             color: red;
+            font-size:18px;
+            font-weight:bold;
+
 
         }
         body {
-	        /*background-color: #92a8d1;
-	        border: groove white 8px;
-            width: 480px;
-	        block-size: 260px;
-
-	        background-image: url(../img/200w.gif);*/
-            background-repeat: no-repeat;
-            background-position-x: center;
+	        background-color: #1e1e1e;
+            text-align: center;
+            color: white;
+            font-family:sans-serif;
         }
+        .formulario{
+            margin-right:10px;
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 2rem;
+            font-weight:bold;
+        }
+
+        .btn{
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            cursor:pointer;
+            transition: .5s all linear;
+            border-radius:5px;
+            padding: 15px 63px;
+
+
+        }
+        .btn-success{
+            margin:30px 0;
+            background-color:#037fa8;
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+            justify-self: center;
+            align-self: center;
+        }
+        .btn-success:hover{
+          background-color:#0dabe0;
+        }
+        .btn-info{
+          background-color:#7d56e4;
+          padding: 15px 32px;
+
+
+        }
+        .btn-info:hover{
+          background-color:#4f30a0;
+
+        }
+
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
 
     <div class="container text-center">
         <h1 class="text-muted">Proyecto Equipo 15</h1>
         <h2 class="display-6">Introduce un nuevo registro</h2>
-        <form th:action="@{/registro}" th:object="${persona}" method="post"  class="row g-3">
+        <form th:action="@{/registro}" th:object="${persona}" method="post"  class="formulario">
             <div class="col-auto">
-                <label x=30px for="nombre">Nombre: </label>
+                <label x=30px for="nombre">Nombre:</label>
                 <input id="nombre" type="text" th:field="*{nombre}">
                 <div th:if="${#fields.hasErrors('nombre')}" th:errorclass="error" th:errors="*{nombre}"></div>
             </div>
             <div class="col-auto">
-                <label for="edad">Edad:   </label>
-                <input id="edad" type="text" th:field="*{edad}">
+                <label for="edad">Edad:</label>
+                <input id="edad" type="number" th:field="*{edad}">
                 <div th:if="${#fields.hasErrors('edad')}" th:errorclass="error" th:errors="*{edad}"></div>
             </div>
             <div class="col-auto">
-                <label for="numTelefono">Teléfono: </label>
+                <label for="numTelefono">Teléfono:</label>
                 <input id="numTelefono" type="text" th:field="*{numTelefono}">
                 <div th:if="${#fields.hasErrors('numTelefono')}" th:errorclass="error" th:errors="*{numTelefono}"></div>
             </div>
